@@ -11,7 +11,6 @@ const SinglePokemonPage: React.FC = () => {
     let foundPokemon = pokemonData.find(
       pd => pd.name.toLowerCase() === pokemonName
     );
-    console.log(foundPokemon);
     setPokemon(updateEvolution(foundPokemon));
   }, [pokemonName]);
 
@@ -45,7 +44,6 @@ const SinglePokemonPage: React.FC = () => {
       });
     }
 
-    console.log(poke);
     return poke;
   };
   return (
@@ -112,12 +110,12 @@ const SinglePokemonPage: React.FC = () => {
                     <div className='row'>
                       {pokemon.prev_evolution?.map((pe, i) => {
                         return (
-                          <div className='col'>
+                          <div className='col' key={i}>
                             <h5 className='text-secondary'>
                               Previous Evolution
                             </h5>
                             <div>
-                              <Link to={`/pokemon/${pe.name.toLowerCase()}`}>
+                              <Link  to={`/pokemon/${pe.name.toLowerCase()}`}>
                                 {pe.name}
                               </Link>
                             </div>
@@ -127,9 +125,9 @@ const SinglePokemonPage: React.FC = () => {
                       })}
                       {pokemon.next_evolution?.map((ne, i) => {
                         return (
-                          <div className='col'>
+                          <div className='col' key={i}>
                             <h5 className='text-secondary'>Next Evolution</h5>
-                            <div>
+                            <div >
                               <Link to={`/pokemon/${ne.name.toLowerCase()}`}>
                                 {ne.name}
                               </Link>
