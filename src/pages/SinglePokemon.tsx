@@ -127,7 +127,7 @@ const SinglePokemonPage: React.FC = () => {
                         return (
                           <div className='col'>
                             <h5 className='text-secondary'>Next Evolution</h5>
-                            <div>
+                            <div key={i}>
                               <Link to={`/pokemon/${ne.name.toLowerCase()}`}>
                                 {ne.name}
                               </Link>
