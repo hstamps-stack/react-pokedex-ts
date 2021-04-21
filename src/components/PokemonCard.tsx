@@ -1,6 +1,5 @@
 import {Link} from "react-router-dom";
 import { setTypeColor } from '../services';
-
 interface PokemonProps{
   pokemon: Pokemon;
 }
