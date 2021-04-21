@@ -2,8 +2,9 @@ import {Link} from "react-router-dom";
 import { setTypeColor } from '../services';
 
 interface PokemonProps{
-    pokemon: Pokemon;
+  pokemon: Pokemon;
 }
+
 const singlePokemonCard:React.FC<PokemonProps> = ({pokemon}) =>{
     return ( 
         <div className='row mt-3'>
